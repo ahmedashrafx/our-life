@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday ❤️</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            color: white;
+        }
+
+        .container {
+            padding: 50px 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h1 {
+            font-size: 3em;
+        }
+
+        p {
+            font-size: 1.3em;
+            max-width: 700px;
+            margin: 20px auto;
+            line-height: 1.6;
+        }
+
+        img {
+            width: 250px;
+            border-radius: 15px;
+            margin-top: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transition: opacity 0.5s ease-in-out;
+            cursor: pointer;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 1em;
+            border: none;
+            border-radius: 25px;
+            background-color: white;
+            color: #ff6f91;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 1em;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+.heart {
+    position: fixed;
+    bottom: -10px;
+    color: red;
+    font-size: 20px;
+    animation: floatUp 5s linear forwards;
+    opacity: 0.8;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) scale(1.5);
+        opacity: 0;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>thank u for every thing u gave me in all this years❤️</h1>
+
+        <p>
+            Bosy ana mhma olt we mhma etklmt we mhma bynt 3omr ma hyb2a ad kmyt el 7ob el bbynholk mhma kan 3omrk ma htfhmy enty bnzbaly eh we et8yrt ad eh 34an b7bk we akeed enty 3rfa dh kwys we kol el bs3alo dlw2ty enna mnb3d4 3n b3d abdn mhma 7sl we dh kol el b7awl a3mlo dlw2tyy mhma 7wlt abynlk brdo m4 htfhmy enk b2ete kol 7yaty we kol 7aga b3mlha btdor 7wleke enty mn 7agat btltha 34ank le 7agat b2eet b3mlha wna m4 7ases 7ata 34ank enty b2ete kol 7yaty we kol el btmnaah fel donia enna nfdl swa we nkoon le b3d we rbna myb3dna4 3nd b3d 5als rbna y5leke lya el 3omr kolo we ya rb tfdly mbsota sana wra sana we l7d a5r el 3omr ya 7bbty ya rbb t722y kol 7aga etmneta fe youm we mtz3lee4 fe youm abdn mny aw mn ay 7aga tnya ya rbb nfdl swa el 3omr kolo ya 7bbty bmoot feke bgd♥️♥️
+        </p>
+        <!-- Slideshow Image -->
+        <img id="photo" src="photo1.jpg" onclick="changePhoto()" alt="Our Memory">
+
+        <br>
+
+        <!-- Music Button -->
+        <button onclick="playMusic()">dosy hna 🎵</button>
+        <audio id="song" src="song.mp3"></audio>
+
+<audio id="song" autoplay loop preload="auto">
+    <source src="song.mp3" type="audio/mpeg">
+</audio>
+        <div class="footer">
+            b7bk wlahy ❤️
+        </div>
+    </div>
+
+    <script>
+
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "❤️";
+
+        // random position
+        heart.style.left = Math.random() * 100 + "vw";
+
+        // random size
+        heart.style.fontSize = (15 + Math.random() * 25) + "px";
+
+        document.body.appendChild(heart);
+
+        // remove after animation
+        setTimeout(() => {
+            heart.remove();
+        }, 5000);
+    }
+
+    // create hearts continuously
+    setInterval(createHeart, 300);
+
+        let images = ["photo1.jpg", "photo2.jpg", "photo4.jpg","photo5.jpg","photo6.jpg", "photo7.jpg","photo8.jpg", "photo9.jpg"];
+        let index = 0;
+
+        function changePhoto() {
+            index = (index + 1) % images.length;
+            updateImage();
+        }
+
+        function updateImage() {
+            const img = document.getElementById("photo");
+            img.style.opacity = 0;
+
+            setTimeout(() => {
+                img.src = images[index];
+                img.style.opacity = 1;
+            }, 300);
+        }
+
+        // Auto slideshow every 3 seconds
+        setInterval(() => {
+            index = (index + 1) % images.length;
+            updateImage();
+        }, 2000);
+
+        function playMusic() {
+            document.getElementById('song').play();
+        }
+    </script>
+</body>
+</html>
